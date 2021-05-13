@@ -1,0 +1,67 @@
+<zakLk01 xmlns:StUF="http://www.egem.nl/StUF/StUF0301" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BG="http://www.egem.nl/StUF/sector/bg/0310" xmlns="http://www.egem.nl/StUF/sector/zkn/0310">
+	<stuurgegevens>
+		<StUF:berichtcode>Lk01</StUF:berichtcode>
+		<StUF:zender>
+			<StUF:organisatie>00000001823288444000</StUF:organisatie>
+			<StUF:applicatie>https://github.com/sudwest-fryslan/OpenNotificeerMolz</StUF:applicatie>
+			<StUF:administratie>S&#250;dwest-Frysl&#226;n</StUF:administratie>
+		</StUF:zender>
+		<StUF:ontvanger>
+			<StUF:organisatie>00000004003214345001</StUF:organisatie>
+			<StUF:applicatie>MijnOverheid</StUF:applicatie>
+			<StUF:administratie>Lopende zaken</StUF:administratie>
+		</StUF:ontvanger>
+		<StUF:referentienummer></StUF:referentienummer>
+		<StUF:tijdstipBericht></StUF:tijdstipBericht>
+		<StUF:entiteittype>ZAK</StUF:entiteittype>
+	</stuurgegevens>
+	<parameters>
+		<StUF:mutatiesoort>T</StUF:mutatiesoort>
+		<StUF:indicatorOvername>V</StUF:indicatorOvername>
+	</parameters>
+	<object StUF:sleutelVerzendend="" StUF:entiteittype="ZAK" StUF:verwerkingssoort="T">
+		<identificatie></identificatie>
+		<omschrijving></omschrijving>
+		<toelichting></toelichting>
+		<startdatum></startdatum>
+		<einddatum xsi:nil="true" StUF:noValue="geenWaarde"></einddatum>
+		<isVan xsi:nil="true" StUF:noValue="waardeOnbekend" StUF:entiteittype="ZAKZKT" StUF:verwerkingssoort="T"/>
+		<heeftAlsInitiator StUF:entiteittype="ZAKBTRINI" StUF:verwerkingssoort="T">
+			<gerelateerde>
+				<natuurlijkPersoon StUF:entiteittype="NPS" StUF:verwerkingssoort="I" xmlns:BG="http://www.egem.nl/StUF/sector/bg/0310">
+					<BG:inp.bsn></BG:inp.bsn>
+					<BG:authentiek StUF:metagegeven="true">J</BG:authentiek>
+					<BG:geslachtsnaam></BG:geslachtsnaam>
+					<BG:voorvoegselGeslachtsnaam></BG:voorvoegselGeslachtsnaam>
+					<BG:voorletters></BG:voorletters>
+					<BG:voornamen></BG:voornamen>
+					<BG:geslachtsaanduiding></BG:geslachtsaanduiding>
+					<BG:geboortedatum></BG:geboortedatum>
+				</natuurlijkPersoon>
+			</gerelateerde>
+			<code xsi:nil="true" StUF:noValue="geenWaarde"/>
+			<omschrijving>Initiator</omschrijving>
+			<toelichting xsi:nil="true" StUF:noValue="geenWaarde"/>
+			<heeftAlsAanspreekpunt StUF:entiteittype="ZAKBTRINICTP" StUF:verwerkingssoort="T">
+				<gerelateerde StUF:entiteittype="CTP" StUF:verwerkingssoort="I">
+					<identificatie>
+					</identificatie>
+					<isAanspreekpuntNamens StUF:entiteittype="CTPSUB" StUF:verwerkingssoort="T">
+						<gerelateerde/>
+					</isAanspreekpuntNamens>
+				</gerelateerde>
+			</heeftAlsAanspreekpunt>
+		</heeftAlsInitiator>
+		<heeft StUF:entiteittype="ZAKSTT" StUF:verwerkingssoort="T">
+			<gerelateerde StUF:entiteittype="STT" StUF:verwerkingssoort="I">
+				<zkt.code></zkt.code>
+				<zkt.omschrijving></zkt.omschrijving>
+				<volgnummer xsi:nil="true" StUF:noValue="waardeOnbekend"/>
+				<code xsi:nil="true" StUF:noValue="waardeOnbekend"/>
+				<omschrijving></omschrijving>
+				<ingangsdatumObject xsi:nil="true" StUF:noValue="waardeOnbekend"/>
+			</gerelateerde>
+			<datumStatusGezet></datumStatusGezet>
+		</heeft>
+	</object>
+</zakLk01>
