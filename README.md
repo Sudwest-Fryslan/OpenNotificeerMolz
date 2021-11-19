@@ -13,9 +13,9 @@ Instellen kan door in het bestand config.py de volgende variabelen aan te passen
 ```
 	...
 	OPENZAAK_BASEURL = 'https://openzaak.local'
-    OPENZAAK_JWT_ISSUER = 'test'
-    OPENZAAK_JWT_SECRET = 'test'
-    ...
+    	OPENZAAK_JWT_ISSUER = 'test'
+	OPENZAAK_JWT_SECRET = 'test'
+	...
 ```
 
 Om in te stellen welke zaaktypes er gesynchroniseerd moeten worden, kunnen de volgende variable worden aangepast: 
@@ -40,7 +40,6 @@ D:\git\OpenNotificeerMolz>python server.py
 ```
 
 Omdat deze applicatie onder Windows moet draaien gebruikt deze applcatie de waitress-WSGI server.
-
-----------------
+--
 
 ###### Voor de vulling van de gegevens in de zaakregistratie component, wordt een data-structuur verwacht die gelijk is aan het gebruikt bij de https://github.com/Sudwest-Fryslan/OpenZaakBrug 
