@@ -25,6 +25,29 @@ Om in te stellen welke zaaktypes er gesynchroniseerd moeten worden, kunnen de vo
 	ACTIVE_ZAAKTYPES = {'B1026', 'ANDER-ZAAKTYPE-IDENTIFICATIE'}
 	...
 ```
+## Hoe zien de berichten eruit?
+Er wordt verwacht dat de notificaties als POST binnenkomen op http://localhost/callback/lopendezaken 
+```
+POST /api/v1/notificaties HTTP/1.0
+
+Authorization: Bearer abcdef1234
+Content-Type: application/json
+
+{
+    "kanaal": "zaken",
+    "hoofdObject": "https://zaken-api.vng.cloud/api/v1/zaken/d7a22",
+    "resource": "status",
+    "resourceUrl": "https://zaken-api.vng.cloud/api/v1/statussen/d7a22/721c9",
+    "actie": "create",
+    "aanmaakdatum": "2018-01-01T17:00:00Z",
+    "kenmerken": {
+        "bron": "082096752011",
+        "zaaktype": "https://example.com/api/v1/zaaktypen/5aa5c",
+        "vertrouwelijkeidaanduiding": "openbaar"
+    }
+}
+```
+(https://vng-realisatie.github.io/gemma-zaken/themas/achtergronddocumentatie/notificaties)
 
 ## Hoe draai ik het onder windows?
 De eerste keer, of bij een update, moeten de modules van python allemaal geinstalleerd/geupdate worden, dit kan met het volgende commando:
