@@ -45,11 +45,14 @@ def lopendezaken(path):
         'client_id': Config.OPENZAAK_JWT_ISSUER,
         'iat': datetime.utcnow()
     }
-    jwt_token = jwt.encode(payload, Config.OPENZAAK_JWT_SECRET, Config.OPENZAAK_JWT_ALGORITHM)
-    headers = {'Accept-Crs': 'EPSG:4326', 'Authorization': 'Bearer ' + jwt_token}
+    encoded = jwt.encode(payload, Config.OPENZAAK_JWT_SECRET, Config.OPENZAAK_JWT_ALGORITHM)
+    headers = {'Accept-Crs': 'EPSG:4326', 'Authorization': 'Bearer ' + encoded.decode('UTF-8')}
     # haal de zaak op
-    zaakjson = requests.get(requestjson['hoofdObject'], headers=headers).json()
-    #print("Zaak json:" + json.dumps(zaakjson, indent=4))    
+    url = requestjson['hoofdObject']
+    print("Requesting url:" + url + " with headers:" + str(headers))
+    zaakjson = requests.get(url, headers=headers).json()
+    
+    print("Zaak json:" + json.dumps(zaakjson, indent=4))    
     zaakidentificatie = zaakjson['identificatie'] 
     print('>> zaakidentificatie:' + zaakidentificatie)
 
@@ -88,20 +91,23 @@ def lopendezaken(path):
     resultxml.find('.//ZKN:gerelateerde/ZKN:zkt.omschrijving', namespaces).text = zaaktypejson['omschrijving'] 
 
     # haal de status op
-    statusjson = requests.get(requestjson['resourceUrl'], headers=headers).json()
+    url = requestjson['resourceUrl']
+    print("Requesting url:" + url + " with headers:" + str(headers))
+    zaakjson = requests.get(url, headers=headers).json()
+    statusjson = requests.get(url, headers=headers).json()
     #print("Status json:" + json.dumps(statusjson, indent=4))    
     statustoelichting = statusjson['statustoelichting'] 
     print('>> statustoelichting:' + statustoelichting)
 
     # haal het resultaat op (wanneer er is)
-    if not zaakjson['resultaat'] is None :
+    if 'resultaat' in zaakjson :
         resultaatjson = requests.get(zaakjson['resultaat'], headers=headers).json()
         #print("Resultaat json:" + json.dumps(resultaatjson, indent=4))    
         resultaattoelichting = resultaatjson['toelichting'] 
         print('>> resultaattoelichting:' + resultaattoelichting)
     else:
         resultaattoelichting = None
-        print('>> NO resultaattoelichting:' + resultaattoelichting)
+        print('>> NO resultaattoelichting')
 
     if not resultaattoelichting == None:
         # geen resultaat ondersteuning op lopendezaken
