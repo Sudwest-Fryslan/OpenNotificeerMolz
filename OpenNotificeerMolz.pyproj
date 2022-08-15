@@ -22,10 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="config.py" />
     <Compile Include="OpenNotificeerMolz.py" />
+    <Compile Include="server.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LICENSE.md" />
+    <Content Include="OpenNotificeerMolz.postman_collection.json" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
+    <Content Include="template.xml" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

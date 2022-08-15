@@ -5,6 +5,7 @@ class Config(object):
     SERVICE_PORT = 80
 
     ACTIVE_ZAAKTYPES = {'B0208', 'B0268', 'B0366'}
+    PRINT_ZAAKJSON = False
 
     OPENZAAK_BASEURL = 'https://openzaak.local'
     OPENZAAK_JWT_ISSUER = 'test'

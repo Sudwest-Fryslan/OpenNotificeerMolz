@@ -23,6 +23,9 @@
 		<identificatie></identificatie>
 		<omschrijving></omschrijving>
 		<toelichting></toelichting>
+		<resultaat>
+			<omschrijving></omschrijving>
+		</resultaat>
 		<startdatum></startdatum>
 		<einddatum xsi:nil="true" StUF:noValue="geenWaarde"></einddatum>
 		<isVan xsi:nil="true" StUF:noValue="waardeOnbekend" StUF:entiteittype="ZAKZKT" StUF:verwerkingssoort="T"/>
