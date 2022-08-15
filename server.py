@@ -261,8 +261,10 @@ def lopendezaken(path):
     resultxml.write(filename)
     print("\tBestand: " + filename + " weggeschreven ===")
     print("\t=== [Success] ===")
+
     # payload verwerkt (return met http-code 200 OK)
-    return referentienummer, 200
+    # request data moet weer terug: https://notificaties-api.vng.cloud/api/v1/schema/#operation/notificaties_create
+    return request.data, 200
 
 if __name__ == '__main__':
     #app.run(host=SERVICE_HOST, port=SERVICE_PORT)
