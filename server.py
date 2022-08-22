@@ -166,13 +166,13 @@ def lopendezaken(path):
     resultxml.find('.//ZKN:object/ZKN:identificatie', namespaces).text = zaakidentificatie
     resultxml.find('.//ZKN:object/ZKN:omschrijving', namespaces).text = zaakjson['omschrijving']
     resultxml.find('.//ZKN:object/ZKN:toelichting', namespaces).text = zaakjson['toelichting']
-    resultxml.find('.//ZKN:object/ZKN:startdatum', namespaces).text = zaakjson['startdatum'].replace('-','')
+    resultxml.find('.//ZKN:object/ZKN:startdatum', namespaces).text = zaakjson['startdatum'].replace('-','').replace('Z','')
 
     #einddatum?
     if not zaakjson['einddatum'] is None:
         einddatumelement = resultxml.find('.//ZKN:object/ZKN:einddatum', namespaces)
         einddatumelement.attrib.clear()
-        einddatumelement.text = zaakjson['einddatum'].replace('-','')
+        einddatumelement.text = zaakjson['einddatum'].replace('-','').replace('Z','')
 #    else:
 #        root = resultxml.getroot()
 #        element = resultxml.find('.//ZKN:object/ZKN:einddatum', namespaces)
@@ -256,7 +256,7 @@ def lopendezaken(path):
     resultxml.find('.//ZKN:natuurlijkPersoon/BG:voorletters', namespaces).text = betrokkenejson['voorletters'] 
     resultxml.find('.//ZKN:natuurlijkPersoon/BG:voornamen', namespaces).text = betrokkenejson['voornamen'] 
     resultxml.find('.//ZKN:natuurlijkPersoon/BG:geslachtsaanduiding', namespaces).text = betrokkenejson['geslachtsaanduiding'].upper()
-    resultxml.find('.//ZKN:natuurlijkPersoon/BG:geboortedatum', namespaces).text = betrokkenejson['geboortedatum'].replace('-','')
+    resultxml.find('.//ZKN:natuurlijkPersoon/BG:geboortedatum', namespaces).text = betrokkenejson['geboortedatum'].replace('-','').replace('Z','')
     filename = Config.XML_OUTPUT_PATH + '/{' + referentienummer.upper() + '}.xml'
     resultxml.write(filename)
     print("\tBestand: " + filename + " weggeschreven ===")

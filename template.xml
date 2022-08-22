@@ -3,7 +3,7 @@
 		<StUF:berichtcode>Lk01</StUF:berichtcode>
 		<StUF:zender>
 			<StUF:organisatie>00000001823288444000</StUF:organisatie>
-			<StUF:applicatie>https://github.com/sudwest-fryslan/OpenNotificeerMolz</StUF:applicatie>
+			<StUF:applicatie>OpenNotificeerMolz</StUF:applicatie>
 			<StUF:administratie>S&#250;dwest-Frysl&#226;n</StUF:administratie>
 		</StUF:zender>
 		<StUF:ontvanger>
